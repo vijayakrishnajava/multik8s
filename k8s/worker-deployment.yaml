@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: workerapp
-          image: stephengrider/multi-worker
+          image: vijayakrishnajava/multi-worker
           ports:
             - containerPort: 5000
           env:
