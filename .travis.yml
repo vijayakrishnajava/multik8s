@@ -15,6 +15,7 @@ before_install:
   - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - rm -f multi-k8s-223304-b0d134ec62e9.json
 
 script:
   - docker run hello-world
@@ -24,3 +25,5 @@ deploy:
   script: bash ./deploy.sh
   on:
     branch: master
+
+    
