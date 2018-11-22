@@ -17,7 +17,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 scripts:
-  docker run hello-world
+  - docker run hello-world
 
 deploy:
   provider: script
