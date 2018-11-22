@@ -17,6 +17,6 @@ docker push vijayakrishnajava/multi-server:$SHA
 docker push vijayakrishnajava/multi-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/client-deployment server=vijayakrishnajava/multi-client:$SHA
-kubectl set image deployments/server-deployment server=vijayakrishnajava/multi-server:$SHA
-kubectl set image deployments/worker-deployment server=vijayakrishnajava/multi-worker:$SHA
+kubectl set image deployments/client-deployment clientapp=vijayakrishnajava/multi-client:$SHA
+kubectl set image deployments/server-deployment serverapp=vijayakrishnajava/multi-server:$SHA
+kubectl set image deployments/worker-deployment workerapp=vijayakrishnajava/multi-worker:$SHA
