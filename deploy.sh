@@ -1,8 +1,12 @@
 echo "entered in bash script"
 
-docker build -t vijayakrishnajava/multi-client:latest -t vijayakrishnajava/multi-client:$SHA -f ./client/Dockerfile.dev ./client
-docker build -t vijayakrishnajava/multi-server:latest -t vijayakrishnajava/multi-server:$SHA -f ./server/Dockerfile.dev ./server
-docker build -t vijayakrishnajava/multi-worker:latest -t vijayakrishnajava/multi-worker:$SHA -f ./worker/Dockerfile.dev ./worker
+docker build -t vijayakrishnajava/multi-client:latest -f ./client/Dockerfile ./client
+docker build -t vijayakrishnajava/multi-server:latest -f ./server/Dockerfile ./server
+docker build -t vijayakrishnajava/multi-worker:latest -f ./worker/Dockerfile ./worker
+
+docker build -t vijayakrishnajava/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t vijayakrishnajava/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t vijayakrishnajava/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push vijayakrishnajava/multi-client:latest
 docker push vijayakrishnajava/multi-server:latest
